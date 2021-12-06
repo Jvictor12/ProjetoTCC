@@ -55,4 +55,8 @@ public class Facade {
     /**************************** Servidor ******************************/
 
     public Servidor servidorFindById (Long id) {return servidorService.findById(id);}
+
+    public List<Servidor> servidorFindAll () {return servidorService.findAll();}
+
+    public Servidor servidorSave (Servidor servidor) {return servidorService.save(servidor);}
 }

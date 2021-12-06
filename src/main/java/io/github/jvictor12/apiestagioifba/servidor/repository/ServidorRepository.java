@@ -7,4 +7,7 @@ import io.github.jvictor12.apiestagioifba.servidor.model.Servidor;
 @Repository
 public interface ServidorRepository extends JpaRepository<Servidor, Long>{
 
+    public Servidor findByNome(String nome);
+
+    public Servidor findByTelefone(String telefone);
 }
