@@ -37,6 +37,29 @@ public class ServidorService {
         return servidor;
     }
 
+    public Servidor update(Servidor servidor){
+        if(servidor == null){
+            throw new ValidationException("Servidor nulo");
+        }
+
+        if(!servidorRepository.existsById(servidor.getId())) {
+            throw new ObjectNotFoundException("Servidor não cadastrado");
+        }
+
+        if(validateServidor(servidor)) {
+            servidorRepository.save(servidor);
+        }
+
+        return servidor;
+    }
+
+    public void deleteById(Servidor servidor){
+        if(!servidorRepository.existsById(servidor.getId())){
+            throw new ObjectNotFoundException("Servidor não existe");
+        }
+        servidorRepository.delete(servidor);
+    }
+
     public boolean validateServidor (Servidor servidor) {
         Servidor servidor_FindByNome = servidorRepository.findByNome(servidor.getNome());
 

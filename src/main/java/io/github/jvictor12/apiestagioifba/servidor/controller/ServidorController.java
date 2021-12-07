@@ -30,4 +30,15 @@ public class ServidorController {
     public ResponseEntity save(@RequestBody @Valid Servidor servidor){
         return ResponseEntity.status(HttpStatus.CREATED).body(facade.servidorSave(servidor));
     }
+
+    @PostMapping ResponseEntity update(@RequestBody @Valid Servidor servidor){
+        return ResponseEntity.status(HttpStatus.OK).body(facade.servidorUpdate(servidor));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteById(@PathVariable Long id){
+        facade.servidorDelete(facade.servidorFindById(id));
+        return ResponseEntity.status(HttpStatus.OK).body(null);
+    }
+
 }

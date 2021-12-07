@@ -2,6 +2,8 @@ package io.github.jvictor12.apiestagioifba.infraestrutura.service;
 
 import io.github.jvictor12.apiestagioifba.fornecedor.model.Fornecedor;
 import io.github.jvictor12.apiestagioifba.fornecedor.service.FornecedorService;
+import io.github.jvictor12.apiestagioifba.setor.model.Setor;
+import io.github.jvictor12.apiestagioifba.setor.service.SetorService;
 import io.github.jvictor12.apiestagioifba.user.model.User;
 import io.github.jvictor12.apiestagioifba.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import io.github.jvictor12.apiestagioifba.servidor.model.Servidor;
 import io.github.jvictor12.apiestagioifba.servidor.service.ServidorService;
 
 import java.util.List;
+import java.util.Set;
 
 @Component
 public class Facade {
@@ -22,6 +25,9 @@ public class Facade {
 
     @Autowired
     private ServidorService servidorService;
+
+    @Autowired
+    private SetorService setorService;
 
     /***************************** User *******************************/
 
@@ -59,4 +65,21 @@ public class Facade {
     public List<Servidor> servidorFindAll () {return servidorService.findAll();}
 
     public Servidor servidorSave (Servidor servidor) {return servidorService.save(servidor);}
+
+    public Servidor servidorUpdate (Servidor servidor) {return servidorService.update(servidor);}
+
+    public void servidorDelete (Servidor servidor) {servidorDelete(servidor);}
+
+
+    /**************************** Servidor ******************************/
+
+    public Setor setorFindById (Long id) { return setorService.findById(id);}
+
+    public List<Setor> setorFindAll() {return setorService.findAll();}
+
+    public Setor setorSave (Setor setor) {return setorService.save(setor);}
+
+    public Setor setorUpdate (Setor setor) {return setorService.update(setor);}
+
+    public void setorDelete (Setor setor) {setorDelete(setor);}
 }
