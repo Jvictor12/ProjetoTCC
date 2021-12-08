@@ -34,7 +34,7 @@ public class FornecedorController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity modify(@RequestBody @Valid Fornecedor fornecedor){
+    public ResponseEntity update(@RequestBody @Valid Fornecedor fornecedor){
         return ResponseEntity.status(HttpStatus.OK).body(facade.fornecedorUpdate(fornecedor));
     }
 

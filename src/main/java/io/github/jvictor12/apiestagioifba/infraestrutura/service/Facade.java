@@ -39,6 +39,10 @@ public class Facade {
         return userService.findAll();
     }
 
+    public User userFindByName (String name){return userService.findByName(name);}
+
+    public User userSave (User user) {return userService.save(user);}
+
     /**************************** Fornecedor ******************************/
 
     public Fornecedor fornecedorFindById (Long id){

@@ -34,7 +34,8 @@ public class SetorController {
         return ResponseEntity.status(HttpStatus.CREATED).body(facade.setorSave(setor));
     }
 
-    @PostMapping ResponseEntity Update(@RequestBody @Valid Setor setor){
+    @PutMapping("/{id}")
+    public ResponseEntity update(@RequestBody @Valid Setor setor){
         return ResponseEntity.status(HttpStatus.OK).body(facade.setorUpdate(setor));
     }
 

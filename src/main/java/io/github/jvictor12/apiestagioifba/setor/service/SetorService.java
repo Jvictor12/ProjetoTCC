@@ -2,7 +2,6 @@ package io.github.jvictor12.apiestagioifba.setor.service;
 
 import io.github.jvictor12.apiestagioifba.infraestrutura.exception.ObjectNotFoundException;
 import io.github.jvictor12.apiestagioifba.infraestrutura.exception.ValidationException;
-import io.github.jvictor12.apiestagioifba.servidor.model.Servidor;
 import io.github.jvictor12.apiestagioifba.setor.model.Setor;
 import io.github.jvictor12.apiestagioifba.setor.repository.SetorRepository;
 import org.springframework.beans.factory.annotation.Autowired;

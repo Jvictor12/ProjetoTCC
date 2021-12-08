@@ -31,7 +31,9 @@ public class ServidorController {
         return ResponseEntity.status(HttpStatus.CREATED).body(facade.servidorSave(servidor));
     }
 
-    @PostMapping ResponseEntity update(@RequestBody @Valid Servidor servidor){
+    @PutMapping ("/{id}")
+    public ResponseEntity update(@RequestBody @Valid Servidor servidor){
+
         return ResponseEntity.status(HttpStatus.OK).body(facade.servidorUpdate(servidor));
     }
 

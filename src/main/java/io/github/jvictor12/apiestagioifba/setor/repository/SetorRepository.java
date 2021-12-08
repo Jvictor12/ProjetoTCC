@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SetorRepository extends JpaRepository<Setor, Long> {
 
-    public findByNome (String nome);
+    public Setor findByNome (String nome);
 
-    public findBySigla (String sigla);
+    public Setor findBySigla (String sigla);
 
 }
