@@ -5,6 +5,8 @@ import io.github.jvictor12.apiestagioifba.infraestrutura.exception.ValidationExc
 import io.github.jvictor12.apiestagioifba.user.model.User;
 import io.github.jvictor12.apiestagioifba.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -61,12 +63,27 @@ public class UserService {
         return user;
     }
 
+    public void delete (User user){
+
+        if(user == null){
+            throw new ValidationException("Usuario nulo");
+        }
+
+        if(!userRepository.existsById(user.getId())){
+            throw new ValidationException("Usuário não cadastrado");
+        }
+
+        userRepository.delete(user);
+    }
+
     public boolean validationUser(User user){
         User user_findByName = userRepository.findByName(user.getName()).orElse(null);
 
         if(user_findByName != null && !user_findByName.equals(user)){
             throw new ValidationException("Usuario ja cadastrado");
         }
+
+
 
         return true;
     }

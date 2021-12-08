@@ -45,6 +45,8 @@ public class Facade {
 
     public User userUpdate (User user) {return userService.update(user);}
 
+    public void userDelete (User user) { userService.delete(user);}
+
     /**************************** Fornecedor ******************************/
 
     public Fornecedor fornecedorFindById (Long id){

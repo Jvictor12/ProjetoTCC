@@ -2,12 +2,14 @@ package io.github.jvictor12.apiestagioifba.servidor.model;
 
 
 import io.github.jvictor12.apiestagioifba.infraestrutura.model.AbstractEntity;
+import io.github.jvictor12.apiestagioifba.setor.model.Setor;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
 
 @NoArgsConstructor
@@ -24,9 +26,6 @@ public class Servidor extends AbstractEntity {
     private String cargo;
 
     @NotEmpty
-    private String setor;
-
-    @NotEmpty
     private String email;
 
     @NotEmpty
@@ -34,4 +33,7 @@ public class Servidor extends AbstractEntity {
 
     @NotEmpty
     private String foto;
+
+    @ManyToOne
+    private Setor setor;
 }

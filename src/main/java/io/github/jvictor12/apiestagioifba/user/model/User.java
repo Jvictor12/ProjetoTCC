@@ -5,6 +5,7 @@ import io.github.jvictor12.apiestagioifba.infraestrutura.model.AbstractEntity;
 import lombok.*;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotEmpty;
 
 @Getter
 @Setter
@@ -13,6 +14,9 @@ import javax.persistence.Entity;
 @Entity(name = "tb_user")
 public class User extends AbstractEntity {
 
+    @NotEmpty (message = "{field.name.invalido}")
     private String name;
+
+    @NotEmpty (message = "{field.password.invalido}")
     private String password;
 }
