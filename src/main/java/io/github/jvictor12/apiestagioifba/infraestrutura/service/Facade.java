@@ -43,6 +43,8 @@ public class Facade {
 
     public User userSave (User user) {return userService.save(user);}
 
+    public User userUpdate (User user) {return userService.update(user);}
+
     /**************************** Fornecedor ******************************/
 
     public Fornecedor fornecedorFindById (Long id){

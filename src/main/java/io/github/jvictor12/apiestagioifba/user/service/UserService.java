@@ -44,6 +44,23 @@ public class UserService {
         return user;
     }
 
+    public User update(User user){
+
+        if(user == null){
+            throw new ValidationException("Usuario nulo");
+        }
+
+        if(!userRepository.existsById(user.getId())){
+            throw new ValidationException("Usuário não cadastrado");
+        }
+
+        if(validationUser(user)){
+            userRepository.save(user);
+        }
+
+        return user;
+    }
+
     public boolean validationUser(User user){
         User user_findByName = userRepository.findByName(user.getName()).orElse(null);
 

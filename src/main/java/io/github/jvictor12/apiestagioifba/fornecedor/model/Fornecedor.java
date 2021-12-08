@@ -22,24 +22,24 @@ public class Fornecedor extends AbstractEntity {
     @NotEmpty (message = "{field.fantasia.invalido}")
     private String fantasia;
 
-    @CNPJ
+    @CNPJ (message = "{field.cnpj.invalido}")
     private String cnpj;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.cidade.invalido}")
     private String cidade;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.estado.invalido}")
     private String estado;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.telefone.invalido}")
     private String telefone;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.email.invalido}")
     private String email;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.nomeResponsavel.invalido}")
     private String nomeResponsavel;
 
-    @NotNull
+    @NotNull (message = "{field.avaliacao.invalido}")
     private Integer avaliacao;
 }
