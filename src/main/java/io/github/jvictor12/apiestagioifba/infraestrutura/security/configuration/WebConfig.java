@@ -57,7 +57,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration corsConfiguration = new CorsConfiguration().applyPermitDefaultValues();
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
-        corsConfiguration.setAllowedOrigins(Arrays.asList("https://sap-4bh5ujg7p-blblemos.vercel.app"));
+        corsConfiguration.setAllowedOrigins(Arrays.asList("https://sap-o5z9bo4d1-blblemos.vercel.app"));
         source.registerCorsConfiguration("/**", corsConfiguration);
         return source;
     }
