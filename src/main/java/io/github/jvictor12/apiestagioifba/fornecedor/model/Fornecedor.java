@@ -25,6 +25,9 @@ public class Fornecedor extends AbstractEntity {
     @CNPJ (message = "{field.cnpj.invalido}")
     private String cnpj;
 
+    @NotEmpty (message = "{field.rua.invalido}")
+    private String rua;
+
     @NotEmpty (message = "{field.cidade.invalido}")
     private String cidade;
 
@@ -39,6 +42,9 @@ public class Fornecedor extends AbstractEntity {
 
     @NotEmpty (message = "{field.nomeResponsavel.invalido}")
     private String nomeResponsavel;
+
+    @NotNull (message = "{field.whatsapp.invalido}")
+    private Boolean whatsapp;
 
     @NotNull (message = "{field.avaliacao.invalido}")
     private Integer avaliacao;
