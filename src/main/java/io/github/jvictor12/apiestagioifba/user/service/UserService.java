@@ -83,8 +83,6 @@ public class UserService {
             throw new ValidationException("Usuario ja cadastrado");
         }
 
-
-
         return true;
     }
 }
