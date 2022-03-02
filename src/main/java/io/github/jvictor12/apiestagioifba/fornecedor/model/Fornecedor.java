@@ -49,6 +49,8 @@ public class Fornecedor extends AbstractEntity {
     @NotNull (message = "{field.whatsapp.invalido}")
     private Boolean whatsapp;
 
+    @NotNull
+
     @NotNull (message = "{field.av_prazo.invalido}")
     private Integer av_prazo;
 
@@ -58,7 +60,6 @@ public class Fornecedor extends AbstractEntity {
     @NotNull (message = "{field.av_contato.invalido}")
     private Integer av_contato;
 
-    @NotNull (message = "{field.avaliacao.invalido}")
     private Integer avaliacao;
 
     @PreUpdate
