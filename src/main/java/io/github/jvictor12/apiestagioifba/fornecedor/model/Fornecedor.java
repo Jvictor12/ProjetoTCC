@@ -5,8 +5,6 @@ import lombok.*;
 import org.hibernate.validator.constraints.br.CNPJ;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -49,7 +47,8 @@ public class Fornecedor extends AbstractEntity {
     @NotNull (message = "{field.whatsapp.invalido}")
     private Boolean whatsapp;
 
-    @NotNull
+    @NotEmpty
+    private String obs_open;
 
     @NotNull (message = "{field.av_prazo.invalido}")
     private Integer av_prazo;

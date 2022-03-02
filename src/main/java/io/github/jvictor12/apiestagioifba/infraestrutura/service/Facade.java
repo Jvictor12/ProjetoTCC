@@ -2,6 +2,8 @@ package io.github.jvictor12.apiestagioifba.infraestrutura.service;
 
 import io.github.jvictor12.apiestagioifba.fornecedor.model.Fornecedor;
 import io.github.jvictor12.apiestagioifba.fornecedor.service.FornecedorService;
+import io.github.jvictor12.apiestagioifba.item.model.Item;
+import io.github.jvictor12.apiestagioifba.item.service.ItemService;
 import io.github.jvictor12.apiestagioifba.setor.model.Setor;
 import io.github.jvictor12.apiestagioifba.setor.service.SetorService;
 import io.github.jvictor12.apiestagioifba.user.model.User;
@@ -28,6 +30,9 @@ public class Facade {
 
     @Autowired
     private SetorService setorService;
+
+    @Autowired
+    private ItemService itemService;
 
     /***************************** User *******************************/
 
@@ -76,7 +81,7 @@ public class Facade {
 
     public Servidor servidorUpdate (Servidor servidor) {return servidorService.update(servidor);}
 
-    public void servidorDelete (Servidor servidor) {servidorDelete(servidor);}
+    public void servidorDelete (Servidor servidor) {servidorService.deleteById(servidor);}
 
 
     /**************************** Servidor ******************************/
@@ -89,5 +94,19 @@ public class Facade {
 
     public Setor setorUpdate (Setor setor) {return setorService.update(setor);}
 
-    public void setorDelete (Setor setor) {setorDelete(setor);}
+    public void setorDelete (Setor setor) {setorService.delete(setor);}
+
+
+    /**************************** Item ******************************/
+
+    public Item itemFindById (Long id) {return itemService.findById(id);}
+
+    public List<Item> itemFindAll() {return itemService.findAll();}
+
+    public Item itemUpdate (Item item) {return itemService.update(item);}
+
+    public Item itemSave (Item item) {return itemService.save(item);}
+
+    public void itemDelete (Item item) {itemService.deleteById(item);}
+
 }
