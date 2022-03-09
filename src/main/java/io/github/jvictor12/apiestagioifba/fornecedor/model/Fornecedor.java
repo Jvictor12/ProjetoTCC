@@ -18,10 +18,10 @@ import javax.validation.constraints.NotNull;
 public class Fornecedor extends AbstractEntity {
 
     @NotEmpty(message = "{field.razaoSocial.invalido}")
-    private String razaoSocial;
+    private String razao_social;
 
     @NotEmpty (message = "{field.fantasia.invalido}")
-    private String fantasia;
+    private String nome_fantasia;
 
     @CNPJ (message = "{field.cnpj.invalido}")
     private String cnpj;
@@ -36,18 +36,18 @@ public class Fornecedor extends AbstractEntity {
     private String estado;
 
     @NotEmpty (message = "{field.telefone.invalido}")
-    private String telefone;
+    private String tel_fixo;
 
     @NotEmpty (message = "{field.email.invalido}")
     private String email;
 
     @NotEmpty (message = "{field.nomeResponsavel.invalido}")
-    private String nomeResponsavel;
+    private String nome_responsavel;
 
     @NotNull (message = "{field.whatsapp.invalido}")
-    private Boolean whatsapp;
+    private Boolean wpp;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.obs_open.invalido}")
     private String obs_open;
 
     @NotNull (message = "{field.av_prazo.invalido}")
