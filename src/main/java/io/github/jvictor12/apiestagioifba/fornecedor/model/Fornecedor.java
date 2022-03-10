@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.validator.constraints.br.CNPJ;
 
 import javax.persistence.Entity;
+import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -64,8 +65,9 @@ public class Fornecedor extends AbstractEntity {
 
     private Integer avaliacao;
 
+    @PrePersist
     @PreUpdate
-    private void preUpdate (){
+    private void preInsercao (){
       this.avaliacao = (av_contato + av_entrega + av_prazo) / 3;
     }
 }
