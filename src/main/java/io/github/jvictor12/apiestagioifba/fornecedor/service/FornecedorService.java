@@ -7,7 +7,6 @@ import io.github.jvictor12.apiestagioifba.infraestrutura.exception.ValidationExc
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class FornecedorService {
@@ -57,7 +56,7 @@ public class FornecedorService {
 
     public boolean validateFornecedor(Fornecedor fornecedor){
 
-        Fornecedor fornecedor_findByFantasia = fornecedorRepository.findByFantasia(fornecedor.getFantasia());
+        Fornecedor fornecedor_findByFantasia = fornecedorRepository.findByFantasia(fornecedor.getNome_fantasia());
 
         if(fornecedor_findByFantasia != null && !fornecedor_findByFantasia.equals(fornecedor)) {
             throw new ValidationException("Nome do fornecedor já cadastrado no sistema");
