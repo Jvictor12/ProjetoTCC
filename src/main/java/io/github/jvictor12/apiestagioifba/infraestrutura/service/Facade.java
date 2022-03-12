@@ -22,9 +22,6 @@ import java.util.Set;
 public class Facade {
 
     @Autowired
-    private AquisicaoService aquisicaoService;
-
-    @Autowired
     private UserService userService;
 
     @Autowired
@@ -38,6 +35,9 @@ public class Facade {
 
     @Autowired
     private ItemService itemService;
+
+    @Autowired
+    private AquisicaoService aquisicaoService;
 
     /***************************** User *******************************/
 
