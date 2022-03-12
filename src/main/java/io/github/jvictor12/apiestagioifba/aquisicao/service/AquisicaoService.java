@@ -60,7 +60,7 @@ public class AquisicaoService {
     }
 
     public Boolean validateAquisicao (Aquisicao aquisicao){
-        Aquisicao aquisicao_findByNProcesso = aquisicaoRepository.findByN_processo(aquisicao.getN_processo());
+        Aquisicao aquisicao_findByNProcesso = aquisicaoRepository.findByNprocesso(aquisicao.getNprocesso());
 
         if(aquisicao_findByNProcesso != null && !aquisicao_findByNProcesso.equals(aquisicao)){
             throw new ValidationException("Numero do processo ja cadastrado no sistema");

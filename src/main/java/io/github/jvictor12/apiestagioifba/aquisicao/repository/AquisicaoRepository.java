@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AquisicaoRepository extends JpaRepository<Aquisicao, Long> {
 
-    public Aquisicao findByN_processo(Integer processo);
+    public Aquisicao findByNprocesso(Integer processo);
 }

@@ -26,7 +26,7 @@ public class Aquisicao extends AbstractEntity {
     private String valor_total;
 
     @NotEmpty
-    private Integer n_processo;
+    private Integer nprocesso;
 
     @NotEmpty
     private String link_processo;

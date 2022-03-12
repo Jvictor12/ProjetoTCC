@@ -16,7 +16,6 @@ import io.github.jvictor12.apiestagioifba.servidor.model.Servidor;
 import io.github.jvictor12.apiestagioifba.servidor.service.ServidorService;
 
 import java.util.List;
-import java.util.Set;
 
 @Component
 public class Facade {
