@@ -1,5 +1,7 @@
 package io.github.jvictor12.apiestagioifba.infraestrutura.service;
 
+import io.github.jvictor12.apiestagioifba.aquisicao.model.Aquisicao;
+import io.github.jvictor12.apiestagioifba.aquisicao.service.AquisicaoService;
 import io.github.jvictor12.apiestagioifba.fornecedor.model.Fornecedor;
 import io.github.jvictor12.apiestagioifba.fornecedor.service.FornecedorService;
 import io.github.jvictor12.apiestagioifba.item.model.Item;
@@ -20,6 +22,9 @@ import java.util.Set;
 public class Facade {
 
     @Autowired
+    private AquisicaoService aquisicaoService;
+
+    @Autowired
     private UserService userService;
 
     @Autowired
@@ -36,15 +41,11 @@ public class Facade {
 
     /***************************** User *******************************/
 
-    public User userFindById (Long id){
-        return userService.findById(id);
-    }
+    public User userFindById (Long id) {return userService.findById(id);}
 
-    public List<User> userFindAll(){
-        return userService.findAll();
-    }
+    public List<User> userFindAll () {return userService.findAll();}
 
-    public User userFindByName (String name){return userService.findByName(name);}
+    public User userFindByName (String name) {return userService.findByName(name);}
 
     public User userSave (User user) {return userService.save(user);}
 
@@ -54,19 +55,13 @@ public class Facade {
 
     /**************************** Fornecedor ******************************/
 
-    public Fornecedor fornecedorFindById (Long id){
-        return fornecedorService.findById(id);
-    }
+    public Fornecedor fornecedorFindById (Long id) {return fornecedorService.findById(id);}
 
-    public Fornecedor fornecedorUpdate(Fornecedor fornecedor){return  fornecedorService.update(fornecedor);}
+    public Fornecedor fornecedorUpdate(Fornecedor fornecedor) {return  fornecedorService.update(fornecedor);}
 
-    public Fornecedor fornecedorSave (Fornecedor fornecedor){
-        return fornecedorService.save(fornecedor);
-    }
+    public Fornecedor fornecedorSave (Fornecedor fornecedor) {return fornecedorService.save(fornecedor);}
 
-    public List<Fornecedor> fornecedorFindAll (){
-        return fornecedorService.findAll();
-    }
+    public List<Fornecedor> fornecedorFindAll () {return fornecedorService.findAll();}
 
     public void fornecedorDelete (Fornecedor fornecedor) {fornecedorService.delete(fornecedor);}
 
@@ -88,7 +83,7 @@ public class Facade {
 
     public Setor setorFindById (Long id) { return setorService.findById(id);}
 
-    public List<Setor> setorFindAll() {return setorService.findAll();}
+    public List<Setor> setorFindAll () {return setorService.findAll();}
 
     public Setor setorSave (Setor setor) {return setorService.save(setor);}
 
@@ -101,7 +96,7 @@ public class Facade {
 
     public Item itemFindById (Long id) {return itemService.findById(id);}
 
-    public List<Item> itemFindAll() {return itemService.findAll();}
+    public List<Item> itemFindAll () {return itemService.findAll();}
 
     public Item itemUpdate (Item item) {return itemService.update(item);}
 
@@ -109,4 +104,15 @@ public class Facade {
 
     public void itemDelete (Item item) {itemService.deleteById(item);}
 
+    /**************************** Aquisicao ******************************/
+
+    public List<Aquisicao> aquisicaoFindAll () {return aquisicaoService.findAll();}
+
+    public Aquisicao aquisicaoFindById (Long id) {return aquisicaoService.findById(id);}
+
+    public Aquisicao aquisicaoSave (Aquisicao aquisicao) {return aquisicaoService.save(aquisicao);}
+
+    public Aquisicao aquisicaoUpdate (Aquisicao aquisicao) {return aquisicaoService.update(aquisicao);}
+
+    public void aquisicaoDelete (Aquisicao aquisicao) {aquisicaoService.deleteById(aquisicao);}
 }

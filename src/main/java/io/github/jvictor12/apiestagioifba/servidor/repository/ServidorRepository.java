@@ -9,5 +9,5 @@ public interface ServidorRepository extends JpaRepository<Servidor, Long>{
 
     public Servidor findByNome(String nome);
 
-    public Servidor findByTelefone(String telefone);
+    public Servidor findByCelular(String Celular);
 }

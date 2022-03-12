@@ -67,7 +67,7 @@ public class ServidorService {
             throw new ValidationException("Nome do servidor já cadastrado no sistema");
         }
 
-        Servidor servidor_FindByTelefone = servidorRepository.findByTelefone(servidor.getTelefone());
+        Servidor servidor_FindByTelefone = servidorRepository.findByCelular(servidor.getCelular());
 
         if(servidor_FindByTelefone != null && !servidor_FindByTelefone.equals(servidor)){
             throw new ValidationException("Telefone do fornecedor já cadastrado no sistema");

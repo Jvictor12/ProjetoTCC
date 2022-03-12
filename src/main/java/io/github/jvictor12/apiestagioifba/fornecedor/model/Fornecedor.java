@@ -28,7 +28,7 @@ public class Fornecedor extends AbstractEntity {
     private String cnpj;
 
     @NotEmpty (message = "{field.endereço.invalido}")
-    private String endereço;
+    private String endereco;
 
     @NotEmpty (message = "{field.cidade.invalido}")
     private String cidade;

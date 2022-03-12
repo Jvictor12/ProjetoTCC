@@ -11,6 +11,7 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,14 +23,14 @@ public class Servidor extends AbstractEntity {
     @NotEmpty
     private String nome;
 
-    @NotEmpty
-    private String cargo;
+    @NotNull
+    private Boolean colic;
 
     @NotEmpty
     private String email;
 
     @NotEmpty
-    private String telefone;
+    private String celular;
 
     @NotEmpty
     private String foto;

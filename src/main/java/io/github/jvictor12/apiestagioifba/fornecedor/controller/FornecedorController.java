@@ -38,8 +38,8 @@ public class FornecedorController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteById (@PathVariable(name = "id") Long idFornecedor) {
-        facade.fornecedorDelete(facade.fornecedorFindById(idFornecedor));
+    public ResponseEntity deleteById (@PathVariable Long id) {
+        facade.fornecedorDelete(facade.fornecedorFindById(id));
         return ResponseEntity.status((HttpStatus.OK)).body(null);
     }
 
