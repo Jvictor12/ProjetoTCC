@@ -24,7 +24,7 @@ public class Item extends AbstractEntity {
     private Integer catmat;
 
     @NotEmpty
-    private String valor_med;
+    private String valorMed;
 
     @NotEmpty
     private String descricao;

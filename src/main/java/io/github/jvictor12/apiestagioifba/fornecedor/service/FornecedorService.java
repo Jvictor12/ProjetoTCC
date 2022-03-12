@@ -56,7 +56,7 @@ public class FornecedorService {
 
     public boolean validateFornecedor(Fornecedor fornecedor){
 
-        Fornecedor fornecedor_findByNome_fantasia = fornecedorRepository.findByNomefantasia(fornecedor.getNomefantasia());
+        Fornecedor fornecedor_findByNome_fantasia = fornecedorRepository.findByNomeFantasia(fornecedor.getNomeFantasia());
 
         if(fornecedor_findByNome_fantasia != null && !fornecedor_findByNome_fantasia.equals(fornecedor)) {
             throw new ValidationException("Nome do fornecedor já cadastrado no sistema");

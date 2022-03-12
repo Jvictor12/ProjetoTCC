@@ -19,10 +19,10 @@ import javax.validation.constraints.NotNull;
 public class Fornecedor extends AbstractEntity {
 
     @NotEmpty(message = "{field.razaoSocial.invalido}")
-    private String razao_social;
+    private String razaoSocial;
 
     @NotEmpty (message = "{field.fantasia.invalido}")
-    private String nomefantasia;
+    private String nomeFantasia;
 
     @CNPJ (message = "{field.cnpj.invalido}")
     private String cnpj;
@@ -37,7 +37,7 @@ public class Fornecedor extends AbstractEntity {
     private String estado;
 
     @NotEmpty (message = "{field.telefone.invalido}")
-    private String tel_fixo;
+    private String telefoneFixo;
 
     @NotEmpty (message = "{field.email.invalido}")
     private String email;
@@ -46,28 +46,28 @@ public class Fornecedor extends AbstractEntity {
     private String cel;
 
     @NotEmpty (message = "{field.nomeResponsavel.invalido}")
-    private String nome_responsavel;
+    private String nomeResponsavel;
 
     @NotNull (message = "{field.whatsapp.invalido}")
     private Boolean wpp;
 
     @NotEmpty (message = "{field.obs_open.invalido}")
-    private String obs_open;
+    private String obsOpen;
 
     @NotNull (message = "{field.av_prazo.invalido}")
-    private Integer av_prazo;
+    private Integer avaliacaoPrazo;
 
     @NotNull (message = "{field.av_entrega.invalido}")
-    private Integer av_entrega;
+    private Integer avaliacaoEntrega;
 
     @NotNull (message = "{field.av_contato.invalido}")
-    private Integer av_contato;
+    private Integer avaliacaoContato;
 
     private Integer avaliacao;
 
     @PrePersist
     @PreUpdate
     private void preInsercao (){
-      this.avaliacao = (av_contato + av_entrega + av_prazo) / 3;
+      this.avaliacao = (avaliacaoContato + avaliacaoEntrega + avaliacaoPrazo) / 3;
     }
 }

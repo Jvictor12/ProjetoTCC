@@ -33,7 +33,7 @@ public class AquisicaoController {
     @PostMapping
     public ResponseEntity save(@Valid @RequestBody Aquisicao aquisicao){
         facade.aquisicaoSave(aquisicao);
-        aquisicao.setN_aquisicao(aquisicao.getId() + "-" + LocalDate.now().getYear());
+        aquisicao.setNumeroAquisicao(aquisicao.getId() + "-" + LocalDate.now().getYear());
         return ResponseEntity.status(HttpStatus.CREATED).body(facade.aquisicaoUpdate(aquisicao));
     }
 

@@ -16,20 +16,20 @@ import java.util.Date;
 @Entity(name = "tb_aquisicao")
 public class Aquisicao extends AbstractEntity {
 
-    private String n_aquisicao;
+    private String numeroAquisicao;
 
     @ManyToOne
     @NotEmpty
     private Servidor servidor;
 
     @NotEmpty
-    private String valor_total;
+    private String valorTotal;
 
     @NotEmpty
-    private Integer nprocesso;
+    private Integer numeroProcesso;
 
     @NotEmpty
-    private String link_processo;
+    private String linkProcesso;
 
     @NotEmpty
     private Date data;
@@ -44,7 +44,7 @@ public class Aquisicao extends AbstractEntity {
     private Integer pac;
 
     @NotNull
-    private Boolean rec_extra_orc;
+    private Boolean recExtraOrc;
 
     private String anotacoes;
 
