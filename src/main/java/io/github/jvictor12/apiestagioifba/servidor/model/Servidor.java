@@ -20,21 +20,25 @@ import javax.validation.constraints.NotNull;
 @Entity(name = "tb_servidor")
 public class Servidor extends AbstractEntity {
 
-    @NotEmpty
+    @NotEmpty (message = "{field.name.invalido}")
     private String nome;
 
-    @NotNull
+    @NotNull (message = "{field.colic.invalido}")
     private Boolean colic;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.email.invalido}")
     private String email;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.cargo.invalido}")
+    private String cargo;
+
+    @NotEmpty (message = "{field.celular.invalido}")
     private String celular;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.foto.invalido}")
     private String foto;
 
     @ManyToOne
+    @NotNull (message = "{field.setor.invalido}")
     private Setor setor;
 }

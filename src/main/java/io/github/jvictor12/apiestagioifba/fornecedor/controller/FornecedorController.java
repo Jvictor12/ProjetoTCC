@@ -23,7 +23,6 @@ public class FornecedorController {
 
     @GetMapping("/{id}")
     public ResponseEntity findById (@PathVariable Long id) {
-
         return ResponseEntity.status(HttpStatus.OK).body(facade.fornecedorFindById(id));
     }
 

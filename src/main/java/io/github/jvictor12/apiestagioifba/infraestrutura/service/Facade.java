@@ -2,6 +2,8 @@ package io.github.jvictor12.apiestagioifba.infraestrutura.service;
 
 import io.github.jvictor12.apiestagioifba.aquisicao.model.Aquisicao;
 import io.github.jvictor12.apiestagioifba.aquisicao.service.AquisicaoService;
+import io.github.jvictor12.apiestagioifba.empenho.model.Empenho;
+import io.github.jvictor12.apiestagioifba.empenho.service.EmpenhoService;
 import io.github.jvictor12.apiestagioifba.fornecedor.model.Fornecedor;
 import io.github.jvictor12.apiestagioifba.fornecedor.service.FornecedorService;
 import io.github.jvictor12.apiestagioifba.item.model.Item;
@@ -37,6 +39,9 @@ public class Facade {
 
     @Autowired
     private AquisicaoService aquisicaoService;
+
+    @Autowired
+    private EmpenhoService empenhoService;
 
     /***************************** User *******************************/
 
@@ -114,4 +119,17 @@ public class Facade {
     public Aquisicao aquisicaoUpdate (Aquisicao aquisicao) {return aquisicaoService.update(aquisicao);}
 
     public void aquisicaoDelete (Aquisicao aquisicao) {aquisicaoService.deleteById(aquisicao);}
+
+    /**************************** Empenho ******************************/
+
+    public List<Empenho> empenhoFindByAquisicao (String aquisicao) {return empenhoService.findByAquisicao(aquisicao);}
+
+    public Empenho empenhoFindById (Long id) {return empenhoService.findById(id);}
+
+    public Empenho empenhoSave (Empenho empenho) {return empenhoService.save(empenho);}
+
+    public Empenho empenhoUpdate (Empenho empenho) {return empenhoService.update(empenho);}
+
+    public void empenhoDelete (Empenho empenho) {empenhoService.deleteById(empenho);}
+
 }

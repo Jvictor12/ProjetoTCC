@@ -42,7 +42,6 @@ public class Fornecedor extends AbstractEntity {
     @NotEmpty (message = "{field.email.invalido}")
     private String email;
 
-    @NotEmpty (message = "{field.celular.invalido}")
     private String cel;
 
     @NotEmpty (message = "{field.nomeResponsavel.invalido}")
@@ -51,7 +50,6 @@ public class Fornecedor extends AbstractEntity {
     @NotNull (message = "{field.whatsapp.invalido}")
     private Boolean wpp;
 
-    @NotEmpty (message = "{field.obs_open.invalido}")
     private String obsOpen;
 
     @NotNull (message = "{field.av_prazo.invalido}")

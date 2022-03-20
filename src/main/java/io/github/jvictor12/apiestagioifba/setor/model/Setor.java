@@ -17,15 +17,15 @@ import javax.validation.constraints.NotNull;
 @Entity(name = "tb_setores")
 public class Setor extends AbstractEntity {
 
-    @NotEmpty
+    @NotEmpty (message = "{field.name.invalido}")
     private String nome;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.sigla.invalido}")
     private String sigla;
 
-    @NotNull
+    @NotNull (message = "{field.ramal.invalido}")
     private Integer ramal;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.email.invalido}")
     private String email;
 }

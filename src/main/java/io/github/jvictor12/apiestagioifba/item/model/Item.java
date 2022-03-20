@@ -17,15 +17,15 @@ import javax.validation.constraints.NotNull;
 @Entity(name = "tb_item")
 public class Item extends AbstractEntity {
 
-    @NotEmpty
+    @NotEmpty (message = "{field.name.invalido}")
     private String nome;
 
-    @NotNull
+    @NotNull (message = "{field.catmat.invalido}")
     private Integer catmat;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.valorMed.invalido}")
     private String valorMed;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.descricao.invalido}")
     private String descricao;
 }

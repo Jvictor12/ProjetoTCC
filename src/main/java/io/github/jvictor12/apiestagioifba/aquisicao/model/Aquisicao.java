@@ -7,6 +7,8 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 @Getter
@@ -19,33 +21,37 @@ public class Aquisicao extends AbstractEntity {
     private String numeroAquisicao;
 
     @ManyToOne
-    @NotEmpty
+    @NotNull (message = "{field.servidor.invalido}")
     private Servidor servidor;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.valorTotal.invalido}")
     private String valorTotal;
 
-    @NotEmpty
+    @NotNull (message = "{field.numeroProcesso.invalido}")
     private Integer numeroProcesso;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.linkProcesso.invalido}")
     private String linkProcesso;
 
-    @NotEmpty
-    private Date data;
+    @Column(updatable = false)
+    private LocalDate data;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.tipo.invalido}")
     private String tipo;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.modalidade.invalido}")
     private String modalidade;
 
-    @NotNull
+    @NotNull (message = "{field.pac.invalido}")
     private Integer pac;
 
-    @NotNull
+    @NotNull (message = "{field.recExtraOrc.invalido}")
     private Boolean recExtraOrc;
 
     private String anotacoes;
 
+    @PrePersist
+    private void prePersist (){
+        this.data = LocalDate.now(ZoneId.of("America/Sao_Paulo"));
+    }
 }
