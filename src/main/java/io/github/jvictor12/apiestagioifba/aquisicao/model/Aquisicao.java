@@ -8,8 +8,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -27,13 +25,12 @@ public class Aquisicao extends AbstractEntity {
     @NotEmpty (message = "{field.valorTotal.invalido}")
     private String valorTotal;
 
-    @NotNull (message = "{field.numeroProcesso.invalido}")
-    private Integer numeroProcesso;
+    @NotEmpty (message = "{field.numeroProcesso.invalido}")
+    private String numeroProcesso;
 
     @NotEmpty (message = "{field.linkProcesso.invalido}")
     private String linkProcesso;
 
-    @Column(updatable = false)
     private LocalDate data;
 
     @NotEmpty (message = "{field.tipo.invalido}")
@@ -50,8 +47,4 @@ public class Aquisicao extends AbstractEntity {
 
     private String anotacoes;
 
-    @PrePersist
-    private void prePersist (){
-        this.data = LocalDate.now(ZoneId.of("America/Sao_Paulo"));
-    }
 }
