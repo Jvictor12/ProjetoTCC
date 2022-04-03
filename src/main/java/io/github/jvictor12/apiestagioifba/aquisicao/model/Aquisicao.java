@@ -7,7 +7,7 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
+import java.math.BigInteger;
 
 @Getter
 @Setter
@@ -28,10 +28,16 @@ public class Aquisicao extends AbstractEntity {
     @NotEmpty (message = "{field.numeroProcesso.invalido}")
     private String numeroProcesso;
 
+    @NotEmpty (message = "{field.objeto.invalido}")
+    private String objeto;
+
+    private String status;
+
+    @Column(columnDefinition = "TEXT")
     @NotEmpty (message = "{field.linkProcesso.invalido}")
     private String linkProcesso;
 
-    private LocalDate data;
+    private String data;
 
     @NotEmpty (message = "{field.tipo.invalido}")
     private String tipo;
@@ -47,4 +53,8 @@ public class Aquisicao extends AbstractEntity {
 
     private String anotacoes;
 
+    @PrePersist
+    private void prePersist(){
+        this.status = "Processo Iniciado na COLIC";
+    }
 }
