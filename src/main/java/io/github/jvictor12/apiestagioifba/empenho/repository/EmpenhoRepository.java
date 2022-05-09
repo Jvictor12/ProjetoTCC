@@ -6,11 +6,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface EmpenhoRepository extends JpaRepository <Empenho, Long>{
 
     @Query("FROM tb_empenho AS e INNER JOIN e.aquisicao AS a ON a.numeroAquisicao = ?1")
     public List<Empenho> findByAquisicao (String aquisicao);
+
+
+
+    public Empenho findByNumeroEmpenho (String empenho);
 }

@@ -1,6 +1,6 @@
 package io.github.jvictor12.apiestagioifba.pagamento.model;
 
-import io.github.jvictor12.apiestagioifba.aquisicao.model.Aquisicao;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.github.jvictor12.apiestagioifba.empenho.model.Empenho;
 import io.github.jvictor12.apiestagioifba.infraestrutura.model.AbstractEntity;
 import lombok.AllArgsConstructor;
@@ -9,10 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
+import javax.persistence.OneToOne;
 
 @Getter
 @Setter
@@ -21,29 +18,22 @@ import java.time.LocalDate;
 @Entity (name = "tb_pagamento")
 public class Pagamento extends AbstractEntity {
 
-    private LocalDate envioNf;
+    private String envioNf;
 
-    @NotEmpty
     private String notaFiscal;
 
-    private LocalDate dataNl;
+    private String dataNl;
 
-    @NotEmpty
     private String numeroNl;
 
-    private LocalDate dataOrdem;
+    private String dataOrdem;
 
-    @NotEmpty
-    private String numeroOrdem;
-
-    @NotEmpty
-    private String status;
-
-    @ManyToOne
-    @NotNull
+    @OneToOne
+    @JsonBackReference
     private Empenho empenho;
 
-    @ManyToOne
-    @NotNull
-    private Aquisicao aquisicao;
+    private String numeroOrdem;
+
+    private String status;
+
 }

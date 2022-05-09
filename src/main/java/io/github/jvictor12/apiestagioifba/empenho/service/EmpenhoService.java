@@ -32,8 +32,9 @@ public class EmpenhoService {
             throw new ValidationException("Empenho nulo");
         }
 
-        //if()
-        empenhoRepository.save(empenho);
+        if(validateEmpenho(empenho)){
+            empenhoRepository.save(empenho);
+        }
 
         return empenho;
     }
@@ -48,8 +49,10 @@ public class EmpenhoService {
             throw new ObjectNotFoundException("Empenho não encontrado");
         }
 
-        //if()
-        empenhoRepository.save(empenho);
+        if(validateEmpenho(empenho)){
+            empenhoRepository.save(empenho);
+        }
+
 
         return empenho;
     }
@@ -63,5 +66,12 @@ public class EmpenhoService {
         empenhoRepository.delete(empenho);
     }
 
-    //public Boolean validateEmpenho(Empenho empenho){}
+    public Boolean validateEmpenho(Empenho empenho){
+            Empenho empenho_findByNumeroEmpenho = empenhoRepository.findByNumeroEmpenho(empenho.getNumeroEmpenho());
+            if(empenho_findByNumeroEmpenho != null && !empenho_findByNumeroEmpenho.equals(empenho)){
+                throw new ValidationException("O empenho ja existe dentro do sistema");
+            }
+
+       return true;
+    }
 }

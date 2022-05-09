@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "tb_setores")
+@Entity(name = "tb_setor")
 public class Setor extends AbstractEntity {
 
     @NotEmpty (message = "{field.name.invalido}")

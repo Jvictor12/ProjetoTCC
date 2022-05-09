@@ -1,5 +1,7 @@
 package io.github.jvictor12.apiestagioifba.aquisicao.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import io.github.jvictor12.apiestagioifba.empenho.model.Empenho;
 import io.github.jvictor12.apiestagioifba.infraestrutura.model.AbstractEntity;
 import io.github.jvictor12.apiestagioifba.servidor.model.Servidor;
 import lombok.*;
@@ -7,7 +9,7 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.math.BigInteger;
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,6 +26,9 @@ public class Aquisicao extends AbstractEntity {
 
     @NotEmpty (message = "{field.valorTotal.invalido}")
     private String valorTotal;
+
+    @NotEmpty (message = "{field.orcamento.invalido}")
+    private String orcamento;
 
     @NotEmpty (message = "{field.numeroProcesso.invalido}")
     private String numeroProcesso;
@@ -52,6 +57,10 @@ public class Aquisicao extends AbstractEntity {
     private Boolean recExtraOrc;
 
     private String anotacoes;
+
+    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "aquisicao")
+    @JsonManagedReference
+    private List<Empenho> empenho;
 
     @PrePersist
     private void prePersist(){

@@ -56,7 +56,7 @@ public class AquisicaoService {
             throw new ObjectNotFoundException("Aquisicao nao existe");
         }
 
-        aquisicaoRepository.delete(aquisicao);
+        aquisicaoRepository.deleteById(aquisicao.getId());
     }
 
     public Boolean validateAquisicao (Aquisicao aquisicao){

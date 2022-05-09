@@ -1,10 +1,12 @@
 package io.github.jvictor12.apiestagioifba.fornecedor.model;
 
 import io.github.jvictor12.apiestagioifba.infraestrutura.model.AbstractEntity;
+import io.github.jvictor12.apiestagioifba.servidor.model.Servidor;
 import lombok.*;
 import org.hibernate.validator.constraints.br.CNPJ;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.validation.constraints.NotEmpty;

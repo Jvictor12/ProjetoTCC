@@ -2,12 +2,18 @@ package io.github.jvictor12.apiestagioifba.infraestrutura.service;
 
 import io.github.jvictor12.apiestagioifba.aquisicao.model.Aquisicao;
 import io.github.jvictor12.apiestagioifba.aquisicao.service.AquisicaoService;
+import io.github.jvictor12.apiestagioifba.cobranca.model.Cobranca;
+import io.github.jvictor12.apiestagioifba.cobranca.service.CobrancaService;
 import io.github.jvictor12.apiestagioifba.empenho.model.Empenho;
 import io.github.jvictor12.apiestagioifba.empenho.service.EmpenhoService;
+import io.github.jvictor12.apiestagioifba.entrega.model.Entrega;
+import io.github.jvictor12.apiestagioifba.entrega.service.EntregaService;
 import io.github.jvictor12.apiestagioifba.fornecedor.model.Fornecedor;
 import io.github.jvictor12.apiestagioifba.fornecedor.service.FornecedorService;
 import io.github.jvictor12.apiestagioifba.item.model.Item;
 import io.github.jvictor12.apiestagioifba.item.service.ItemService;
+import io.github.jvictor12.apiestagioifba.pagamento.model.Pagamento;
+import io.github.jvictor12.apiestagioifba.pagamento.service.PagamentoService;
 import io.github.jvictor12.apiestagioifba.setor.model.Setor;
 import io.github.jvictor12.apiestagioifba.setor.service.SetorService;
 import io.github.jvictor12.apiestagioifba.user.model.User;
@@ -42,6 +48,15 @@ public class Facade {
 
     @Autowired
     private EmpenhoService empenhoService;
+
+    @Autowired
+    private PagamentoService pagamentoService;
+
+    @Autowired
+    private EntregaService entregaService;
+
+    @Autowired
+    private CobrancaService cobrancaService;
 
     /***************************** User *******************************/
 
@@ -124,12 +139,47 @@ public class Facade {
 
     public List<Empenho> empenhoFindByAquisicao (String aquisicao) {return empenhoService.findByAquisicao(aquisicao);}
 
-    public Empenho empenhoFindById (Long id) {return empenhoService.findById(id);}
+    public Empenho empenhoFindById (Long id) { return empenhoService.findById(id);}
 
-    public Empenho empenhoSave (Empenho empenho) {return empenhoService.save(empenho);}
+    public Empenho empenhoSave (Empenho empenho) { return empenhoService.save(empenho);}
 
-    public Empenho empenhoUpdate (Empenho empenho) {return empenhoService.update(empenho);}
+    public Empenho empenhoUpdate (Empenho empenho) { return empenhoService.update(empenho);}
 
-    public void empenhoDelete (Empenho empenho) {empenhoService.deleteById(empenho);}
+    public void empenhoDelete (Empenho empenho) { empenhoService.deleteById(empenho);}
 
+    /**************************** Pagamento ******************************/
+
+    public List<Pagamento> pagamentoFindByAquisiao (String aquisicao) { return pagamentoService.findByAquisicao(aquisicao);};
+
+    public Pagamento pagamentoFindById (Long id) { return pagamentoService.findById(id);};
+
+    public Pagamento pagamentoSave (Pagamento pagamento) { return  pagamentoService.save(pagamento);};
+
+    public Pagamento pagamentoUpdate (Pagamento pagamento) { return pagamentoService.update(pagamento);};
+
+    public void pagamentoDelete (Pagamento pagamento) { pagamentoService.deleteById(pagamento);};
+
+    /**************************** Entrega ******************************/
+
+    public List<Entrega> entregaFindByAquisicao (String aquisicao) { return entregaService.findByAquisicao(aquisicao); };
+
+    public Entrega entregaFindById (Long id) { return entregaService.findById(id);};
+
+    public Entrega entregaSave (Entrega entrega) { return entregaService.save(entrega);};
+
+    public Entrega entregaUpdate (Entrega entrega) { return entregaService.update(entrega);};
+
+    public void entregaDelete (Entrega entrega) { entregaService.deleteById(entrega);};
+
+    /**************************** Cobranca ******************************/
+
+    public List<Cobranca> cobrancaFindByEmpenho (String empenho) { return cobrancaService.findByEmpenho(empenho);}
+
+    public Cobranca cobrancaFindById (Long id) { return cobrancaService.findById(id);}
+
+    public Cobranca cobrancaSave (Cobranca cobranca) { return cobrancaService.save(cobranca);}
+
+    public Cobranca cobrancaUpdate (Cobranca cobranca) { return cobrancaService.update(cobranca);}
+
+    public void cobrancaDelete (Cobranca cobranca) { cobrancaService.deleteById(cobranca);}
 }
