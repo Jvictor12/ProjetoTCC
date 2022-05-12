@@ -19,19 +19,19 @@ import javax.validation.constraints.NotNull;
 @Entity(name = "tb_cobranca")
 public class Cobranca extends AbstractEntity {
 
-    @NotEmpty
+    @NotEmpty (message = "{field.via.invalido}")
     private String via;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.dataHora.invalido}")
     private String dataHora;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.contato.invalido}")
     private String contato;
 
-    @NotEmpty
+    @NotEmpty (message = "{field.comprovacao.invalido}")
     private String comprovacao;
 
-    @NotNull
+    @NotNull (message = "{field.resposta.invalido}")
     private Boolean resposta;
 
     private String dataResposta;
@@ -39,7 +39,7 @@ public class Cobranca extends AbstractEntity {
     private String observacao;
 
     @ManyToOne
-    @NotNull
+    @NotNull (message = "{field.fornecedor.invalido}")
     private Fornecedor fornecedor;
 
     @ManyToOne
