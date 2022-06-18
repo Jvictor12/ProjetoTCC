@@ -1,7 +1,6 @@
 package io.github.jvictor12.apiestagioifba.cobranca.repository;
 
 import io.github.jvictor12.apiestagioifba.cobranca.model.Cobranca;
-import io.github.jvictor12.apiestagioifba.pagamento.model.Pagamento;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

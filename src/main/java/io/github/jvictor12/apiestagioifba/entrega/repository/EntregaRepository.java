@@ -11,5 +11,5 @@ import java.util.List;
 public interface EntregaRepository extends JpaRepository<Entrega, Long> {
 
     @Query("FROM tb_entrega AS e INNER JOIN e.empenho AS n ON n.numeroEmpenho = ?1")
-    public List<Entrega> findByAquisicao (String aquisicao);
+    public List<Entrega> findByEmpenho (String empenho);
 }

@@ -58,7 +58,7 @@ public class Aquisicao extends AbstractEntity {
 
     private String anotacoes;
 
-    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "aquisicao")
+    @OneToMany (cascade = CascadeType.ALL, mappedBy = "aquisicao")
     @JsonManagedReference
     private List<Empenho> empenho;
 

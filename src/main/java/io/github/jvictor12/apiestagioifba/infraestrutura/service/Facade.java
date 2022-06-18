@@ -161,7 +161,7 @@ public class Facade {
 
     /**************************** Entrega ******************************/
 
-    public List<Entrega> entregaFindByAquisicao (String aquisicao) { return entregaService.findByAquisicao(aquisicao); };
+    public List<Entrega> entregaFindByEmpenho (String empenho) { return entregaService.findByEmpenho(empenho); };
 
     public Entrega entregaFindById (Long id) { return entregaService.findById(id);};
 

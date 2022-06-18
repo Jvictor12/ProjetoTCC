@@ -25,9 +25,9 @@ public class EntregaController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity findByAquisicao (@RequestParam(required = false) String aquisicao) {
-        if(aquisicao != null){
-            List<Entrega> entregas = facade.entregaFindByAquisicao(aquisicao);
+    public ResponseEntity findByAquisicao (@RequestParam(required = false) String empenho) {
+        if(empenho != null){
+            List<Entrega> entregas = facade.entregaFindByEmpenho(empenho);
             if (!entregas.isEmpty()) {
                 return ResponseEntity.status(HttpStatus.OK).body(entregas);
             }

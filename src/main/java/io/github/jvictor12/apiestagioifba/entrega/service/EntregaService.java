@@ -15,7 +15,7 @@ public class EntregaService {
     @Autowired
     private EntregaRepository entregaRepository;
 
-    public List<Entrega> findByAquisicao (String aquisicao){ return entregaRepository.findByAquisicao(aquisicao);}
+    public List<Entrega> findByEmpenho (String empenho){ return entregaRepository.findByEmpenho(empenho);}
 
     public Entrega findById (Long id){
         return entregaRepository.findById(id).orElseThrow( ()-> {
