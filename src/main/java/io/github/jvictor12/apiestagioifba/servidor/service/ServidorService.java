@@ -2,9 +2,9 @@ package io.github.jvictor12.apiestagioifba.servidor.service;
 
 import io.github.jvictor12.apiestagioifba.infraestrutura.exception.ObjectNotFoundException;
 import io.github.jvictor12.apiestagioifba.infraestrutura.exception.ValidationException;
-import org.springframework.beans.factory.annotation.Autowired;
 import io.github.jvictor12.apiestagioifba.servidor.model.Servidor;
 import io.github.jvictor12.apiestagioifba.servidor.repository.ServidorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

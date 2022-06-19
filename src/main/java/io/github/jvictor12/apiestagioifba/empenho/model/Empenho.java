@@ -9,7 +9,10 @@ import io.github.jvictor12.apiestagioifba.fornecedor.model.Fornecedor;
 import io.github.jvictor12.apiestagioifba.infraestrutura.model.AbstractEntity;
 import io.github.jvictor12.apiestagioifba.item.model.Item;
 import io.github.jvictor12.apiestagioifba.pagamento.model.Pagamento;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;

@@ -14,14 +14,14 @@ import io.github.jvictor12.apiestagioifba.item.model.Item;
 import io.github.jvictor12.apiestagioifba.item.service.ItemService;
 import io.github.jvictor12.apiestagioifba.pagamento.model.Pagamento;
 import io.github.jvictor12.apiestagioifba.pagamento.service.PagamentoService;
+import io.github.jvictor12.apiestagioifba.servidor.model.Servidor;
+import io.github.jvictor12.apiestagioifba.servidor.service.ServidorService;
 import io.github.jvictor12.apiestagioifba.setor.model.Setor;
 import io.github.jvictor12.apiestagioifba.setor.service.SetorService;
 import io.github.jvictor12.apiestagioifba.user.model.User;
 import io.github.jvictor12.apiestagioifba.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import io.github.jvictor12.apiestagioifba.servidor.model.Servidor;
-import io.github.jvictor12.apiestagioifba.servidor.service.ServidorService;
 
 import java.util.List;
 

@@ -2,7 +2,6 @@ package io.github.jvictor12.apiestagioifba.setor.controller;
 
 
 import io.github.jvictor12.apiestagioifba.infraestrutura.service.Facade;
-
 import io.github.jvictor12.apiestagioifba.setor.model.Setor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

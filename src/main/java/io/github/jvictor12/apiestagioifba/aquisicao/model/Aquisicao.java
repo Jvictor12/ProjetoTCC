@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.github.jvictor12.apiestagioifba.empenho.model.Empenho;
 import io.github.jvictor12.apiestagioifba.infraestrutura.model.AbstractEntity;
 import io.github.jvictor12.apiestagioifba.servidor.model.Servidor;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;

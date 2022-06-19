@@ -1,7 +1,10 @@
 package io.github.jvictor12.apiestagioifba.fornecedor.model;
 
 import io.github.jvictor12.apiestagioifba.infraestrutura.model.AbstractEntity;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.validator.constraints.br.CNPJ;
 
 import javax.persistence.Entity;
