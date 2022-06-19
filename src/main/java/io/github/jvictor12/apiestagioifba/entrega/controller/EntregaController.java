@@ -32,7 +32,6 @@ public class EntregaController {
                 return ResponseEntity.status(HttpStatus.OK).body(entregas);
             }
         }
-        System.out.println();
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 
